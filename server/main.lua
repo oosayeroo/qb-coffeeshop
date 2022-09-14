@@ -146,7 +146,110 @@ QBCore.Functions.CreateCallback('qb-coffeeshop:server:get:ingredientGiftBox', fu
     end
 end)
 
+RegisterNetEvent('qb-coffeeshop:server:giftboxitems', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.RemoveItem('coffeeshop-giftbox', 1)
+    Player.Functions.AddItem('whitewidow-joint', 1)
+    Player.Functions.AddItem('skunk-joint', 1)
+    Player.Functions.AddItem('purplehaze-joint', 1)
+    Player.Functions.AddItem('ogkush-joint', 1)
+    Player.Functions.AddItem('amnesia-joint', 1)
+    Player.Functions.AddItem('ak47-joint', 1)
+end)
 
+RegisterNetEvent('qb-coffeeshop:server:makegiftbox', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('coffeeshop-giftbox', 1)
+    Player.Functions.RemoveItem('whitewidow-joint', 1)
+    Player.Functions.RemoveItem('skunk-joint', 1)
+    Player.Functions.RemoveItem('purplehaze-joint', 1)
+    Player.Functions.RemoveItem('ogkush-joint', 1)
+    Player.Functions.RemoveItem('amnesia-joint', 1)
+    Player.Functions.RemoveItem('ak47-joint', 1)
+    Player.Functions.RemoveItem('gift-box', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makeregular', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('regular-coffee', 1)
+    Player.Functions.RemoveItem('coffee-beans', 1)
+    Player.Functions.RemoveItem('coffee-cup', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makeespresso', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('espresso-coffee', 1)
+    Player.Functions.RemoveItem('coffee-beans', 1)
+    Player.Functions.RemoveItem('coffee-cup', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makelatte', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('latte-coffee', 1)
+    Player.Functions.RemoveItem('coffee-beans', 1)
+    Player.Functions.RemoveItem('coffee-cup', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makeamericano', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('americano-coffee', 1)
+    Player.Functions.RemoveItem('coffee-beans', 1)
+    Player.Functions.RemoveItem('coffee-cup', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makewidowjoint', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('whitewidow-joint', Config.JointCraftAmount)
+    Player.Functions.RemoveItem('weed_white-widow', 1)
+    Player.Functions.RemoveItem('rolling_paper', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makeskunkjoint', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('skunk-joint', Config.JointCraftAmount)
+    Player.Functions.RemoveItem('weed_skunk', 1)
+    Player.Functions.RemoveItem('rolling_paper', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makephazejoint', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('purplehaze-joint', Config.JointCraftAmount)
+    Player.Functions.RemoveItem('weed_purple-haze', 1)
+    Player.Functions.RemoveItem('rolling_paper', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makeogkushjoint', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('ogkush-joint', Config.JointCraftAmount)
+    Player.Functions.RemoveItem('weed_og-kush', 1)
+    Player.Functions.RemoveItem('rolling_paper', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makeamnesiajoint', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('amnesia-joint', Config.JointCraftAmount)
+    Player.Functions.RemoveItem('weed_amnesia', 1)
+    Player.Functions.RemoveItem('rolling_paper', 1)
+end)
+
+RegisterNetEvent('qb-coffeeshop:server:makeakjoint', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.AddItem('ak47-joint', Config.JointCraftAmount)
+    Player.Functions.RemoveItem('weed_ak47', 1)
+    Player.Functions.RemoveItem('rolling_paper', 1)
+end)
 
 QBCore.Functions.CreateUseableItem("coffeeshop-giftbox", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
