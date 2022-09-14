@@ -1,3 +1,4 @@
+update - 14/9/22 - update for new qb-inventory exports
 
 Discord - https://discord.gg/XPuqBVtyqX
 
