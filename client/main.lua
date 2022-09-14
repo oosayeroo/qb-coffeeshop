@@ -129,19 +129,13 @@ AddEventHandler("qb-coffeeshop:OpenGiftBox", function()
 
         DeleteEntity(gbobj)
 
-        TriggerServerEvent('QBCore:Server:RemoveItem', 'coffeeshop-giftbox', 1)
+        TriggerServerEvent('qb-coffeeshop:server:giftboxitems')
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items['coffeeshop-giftbox'], "remove")
-        TriggerServerEvent('QBCore:Server:AddItem', "whitewidow-joint", 1)
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items['whitewidow-joint'], "add")
-		TriggerServerEvent('QBCore:Server:AddItem', "skunk-joint", 1)
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items['skunk-joint'], "add")
-		TriggerServerEvent('QBCore:Server:AddItem', "purplehaze-joint", 1)
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items['purplehaze-joint'], "add")
-        TriggerServerEvent('QBCore:Server:AddItem', "ogkush-joint", 1)
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items['ogkush-joint'], "add")
-        TriggerServerEvent('QBCore:Server:AddItem', "amnesia-joint", 1)
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items['amnesia-joint'], "add")
-        TriggerServerEvent('QBCore:Server:AddItem', "ak47-joint", 1)
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items['ak47-joint'], "add")
 
         TriggerServerEvent('qb-coffeeshop:server:GetGiftBoxLuck')
@@ -167,14 +161,7 @@ AddEventHandler("qb-coffeeshop:CreateGiftBox", function()
 					anim = "car_bomb_mechanic",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "whitewidow-joint", 1)
-                    			TriggerServerEvent('QBCore:Server:RemoveItem', "gift-box", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "skunk-joint", 1)
-                                        TriggerServerEvent('QBCore:Server:RemoveItem', "purplehaze-joint", 1)
-                                        TriggerServerEvent('QBCore:Server:RemoveItem', "ogkush-joint", 1)
-                                        TriggerServerEvent('QBCore:Server:RemoveItem', "amnesia-joint", 1)
-                                        TriggerServerEvent('QBCore:Server:RemoveItem', "ak47-joint", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "coffeeshop-giftbox", 1)
+					TriggerServerEvent('qb-coffeeshop:server:makegiftbox')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["coffeeshop-giftbox"], "add")
                     			QBCore.Functions.Notify("You made a A Gift Box", "success")
 				end, function()
@@ -206,9 +193,7 @@ AddEventHandler("qb-coffeeshop:BrewRegular", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "coffee-beans", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "coffee-cup", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "regular-coffee", 1)
+					TriggerServerEvent('qb-coffeeshop:server:makeregular')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["regular-coffee"], "add")
                     			QBCore.Functions.Notify("You Brewed Some Coffee", "success")
 				end, function()
@@ -238,9 +223,7 @@ AddEventHandler("qb-coffeeshop:BrewEspresso", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "coffee-beans", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "coffee-cup", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "espresso-coffee", 1)
+					TriggerServerEvent('qb-coffeeshop:server:makeespresso')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["espresso-coffee"], "add")
                     			QBCore.Functions.Notify("You Brewed Some Coffee", "success")
 				end, function()
@@ -270,9 +253,7 @@ AddEventHandler("qb-coffeeshop:BrewLatte", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "coffee-beans", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "coffee-cup", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "latte-coffee", 1)
+					TriggerServerEvent('qb-coffeeshop:server:makelatte')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["latte-coffee"], "add")
                     			QBCore.Functions.Notify("You Brewed Some Coffee", "success")
 				end, function()
@@ -302,9 +283,7 @@ AddEventHandler("qb-coffeeshop:BrewAmericano", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "coffee-beans", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "coffee-cup", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "americano-coffee", 1)
+					TriggerServerEvent('qb-coffeeshop:server:makeamericano')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["americano-coffee"], "add")
                     			QBCore.Functions.Notify("You Brewed Some Coffee", "success")
 				end, function()
@@ -336,9 +315,7 @@ AddEventHandler("qb-coffeeshop:CreateWhiteWidow", function()
 					anim = "car_bomb_mechanic",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_white-widow", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "whitewidow-joint", Config.WhiteWidowAmount)
+					TriggerServerEvent('qb-coffeeshop:server:makewidowjoint')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["whitewidow-joint"], "add")
                     			QBCore.Functions.Notify("You made a White Widow Joint", "success")
 				end, function()
@@ -368,9 +345,7 @@ AddEventHandler("qb-coffeeshop:CreateSkunk", function()
 					anim = "car_bomb_mechanic",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_skunk", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "skunk-joint", Config.JointCraftAmount)
+					TriggerServerEvent('qb-coffeeshop:server:makeskunkjoint')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["skunk-joint"], "add")
                     			QBCore.Functions.Notify("You made a Skunk Joint", "success")
 				end, function()
@@ -400,9 +375,7 @@ AddEventHandler("qb-coffeeshop:CreatePurpleHaze", function()
 					anim = "car_bomb_mechanic",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_purple-haze", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "purplehaze-joint", Config.JointCraftAmount)
+					TriggerServerEvent('qb-coffeeshop:server:makephazejoint')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["purplehaze-joint"], "add")
                     			QBCore.Functions.Notify("You made a Purple Haze Joint", "success")
 				end, function()
@@ -432,9 +405,7 @@ AddEventHandler("qb-coffeeshop:CreateOGKush", function()
 					anim = "car_bomb_mechanic",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_og-kush", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "ogkush-joint", Config.JointCraftAmount)
+					TriggerServerEvent('qb-coffeeshop:server:makeogkushjoint')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["ogkush-joint"], "add")
                     			QBCore.Functions.Notify("You made OG Kush Joints", "success")
 				end, function()
@@ -464,9 +435,7 @@ AddEventHandler("qb-coffeeshop:CreateAmnesia", function()
 					anim = "car_bomb_mechanic",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_amnesia", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "amnesia-joint", Config.JointCraftAmount)
+					TriggerServerEvent('qb-coffeeshop:server:makeamnesiajoint')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["amnesia-joint"], "add")
                     			QBCore.Functions.Notify("You made Amnesia Joints", "success")
 				end, function()
@@ -496,9 +465,7 @@ AddEventHandler("qb-coffeeshop:CreateAK47", function()
 					anim = "car_bomb_mechanic",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_ak47", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerServerEvent('QBCore:Server:AddItem', "ak47-joint", Config.JointCraftAmount)
+					TriggerServerEvent('qb-coffeeshop:server:makeakjoint')
                     			TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["ak47-joint"], "add")
                     			QBCore.Functions.Notify("You made AK47 Joints", "success")
 				end, function()
