@@ -43,7 +43,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     QBCore.Functions.GetPlayerData(function(PlayerData)
         PlayerJob = PlayerData.job
         if PlayerData.job.onduty then
-            if PlayerData.job.name == "420coffee" then
+            if PlayerData.job.name == Config.JobName then
                 TriggerServerEvent("QBCore:ToggleDuty")
             end
         end
@@ -151,7 +151,7 @@ AddEventHandler("qb-coffeeshop:CreateGiftBox", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientGiftBox', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making A Gift Box..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making A Gift Box..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -183,7 +183,7 @@ AddEventHandler("qb-coffeeshop:BrewRegular", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientCoffee', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Brewing Coffee..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Brewing Coffee..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -213,7 +213,7 @@ AddEventHandler("qb-coffeeshop:BrewEspresso", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientCoffee', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Brewing Espresso..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Brewing Espresso..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -243,7 +243,7 @@ AddEventHandler("qb-coffeeshop:BrewLatte", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientCoffee', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Brewing Latte..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Brewing Latte..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -273,7 +273,7 @@ AddEventHandler("qb-coffeeshop:BrewAmericano", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientCoffee', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Brewing Americano..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Brewing Americano..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -305,7 +305,7 @@ AddEventHandler("qb-coffeeshop:CreateWhiteWidow", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientWhiteWidow', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -335,7 +335,7 @@ AddEventHandler("qb-coffeeshop:CreateSkunk", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientSkunk', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -365,7 +365,7 @@ AddEventHandler("qb-coffeeshop:CreatePurpleHaze", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientPurpleHaze', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -395,7 +395,7 @@ AddEventHandler("qb-coffeeshop:CreateOGKush", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientOGKush', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -425,7 +425,7 @@ AddEventHandler("qb-coffeeshop:CreateAmnesia", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientAmnesia', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -455,7 +455,7 @@ AddEventHandler("qb-coffeeshop:CreateAK47", function()
     if onDuty then
     	QBCore.Functions.TriggerCallback('qb-coffeeshop:server:get:ingredientAK47', function(HasItems)  
     		if HasItems then
-				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", 4000, false, true, {
+				QBCore.Functions.Progressbar("pickup_sla", "Making Joints..", Config.CraftingTime * 1000, false, true, {
 					disableMovement = true,
 					disableCarMovement = true,
 					disableMouse = false,
@@ -483,7 +483,11 @@ end)
 
 RegisterNetEvent("qb-coffeeshop:shop")
 AddEventHandler("qb-coffeeshop:shop", function()
-    TriggerServerEvent("inventory:server:OpenInventory", "shop", "420coffee", Config.Items)
+	if Config.JimShops == true then
+		TriggerServerEvent("jim-shops:ShopOpen", "shop", "420coffee", Config.Items)
+	else
+    	TriggerServerEvent("inventory:server:OpenInventory", "shop", "420coffee", Config.Items)
+	end
 end)
 
 function CoffeeJointEffect()

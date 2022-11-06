@@ -101,44 +101,6 @@ Citizen.CreateThread(function()
                 distance = 1.5
             })
 
-
-        exports['qb-target']:AddBoxZone("420bigstorage1", vector3(237.17, 379.83, 106.26), 1.0, 4.0, {
-            name="420bigstorage1",
-            heading=157,
-            debugPoly=false,
-            minZ=105.0,
-            maxZ=108.0,
-        }, {
-                options = {
-                    {
-                        event = "qb-coffeeshop:Storage",
-                        icon = "fas fa-lock",
-                        label = "Storage",
-                        job = "420coffee",
-                    },
-                },
-                distance = 2.0
-            })
-
-
-        exports['qb-target']:AddBoxZone("420bigstorage2", vector3(231.26, 381.88, 106.44), 1.0, 4.0, {
-            name="420bigstorage2",
-            heading=157,
-            debugPoly=false,
-            minZ=105.0,
-            maxZ=108.0,
-        }, {
-                options = {
-                    {
-                        event = "qb-coffeeshop:Storage2",
-                        icon = "fas fa-lock",
-                        label = "Storage",
-                        job = "420coffee",
-                    },
-                },
-                distance = 2.0
-            })
-
 end)
 
 

@@ -42,7 +42,8 @@ Citizen.CreateThread(function()
                     type="client",
                     event = "garage:CoffeeShopGarage",
                     icon = "fas fa-car",
-                    label = "Dom"
+                    label = "Dom",
+                    job = Config.JobName
                 }
             },
           distance = 2.5,
@@ -54,10 +55,10 @@ RegisterNetEvent('qb-coffeeshop:garage')
 AddEventHandler('qb-coffeeshop:garage', function(cs)
     local vehicle = cs.vehicle
     local coords = Config.SpawnCarLocation
-        if PlayerData.job.name == "420coffee" then
+        if PlayerData.job.name == Config.JobName then
             if vehicle == Config.CompanyVehicle then		
                 QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    SetVehicleNumberPlateText(veh, "420COFFEE"..tostring(math.random(1000, 9999)))
+                    SetVehicleNumberPlateText(veh, Config.VehiclePlate..tostring(math.random(1000, 9999)))
                     exports['LegacyFuel']:SetFuel(veh, 100.0)
                     SetEntityHeading(veh, coords.w)
                     TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
