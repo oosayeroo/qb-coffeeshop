@@ -5,6 +5,8 @@ Config.GaragePed = "g_m_importexport_01"  --change to whatever model you like
 Config.GaragePedLocation = vector4(221.17, 370.18, 106.27, 67.75)
 Config.SpawnCarLocation = vector4(213.74, 389.2, 106.87, 172.49)
 Config.CompanyVehicle = 'surfer'
+Config.VehiclePlate = "420COFFEE"
+Config.JobName = '420coffee'
 
 ---===GIFT BOX OPENING=====--
 --these LuckItems are a chance item you get when opening a gift box. these must be items you have in your shared/items.lua add as many as you like
@@ -15,6 +17,7 @@ Config.LuckItems = {
     "weed_white-widow_seed",
 }
 
+Config.CraftingTime = 5 --in seconds
 ---===joints====----
 Config.JointCraftAmount = 3  --amount of joints you get from crafting a single time
 Config.JointStressRelief = math.random(5 ,15)  --amount of stress to lower when smoking
